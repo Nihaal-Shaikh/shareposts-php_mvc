@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    Options -Multiviews
+    RewriteEngine On
+    RewriteBase /traversy_mvc/public
+
+    # Check if the requested filename is not a directory
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Check if the requested filename is not a file
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # Rewrite rule to direct all other requests to index.php with the URL as a query parameter
+    RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
