@@ -4,13 +4,13 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'phpmvc');
+define('DB_NAME', 'shareposts');
 
 // App root
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // URL root
-define('URLROOT', 'http://localhost/traversy_mvc');
+define('URLROOT', 'http://localhost/shareposts');
 
 // Site name
-define('SITENAME', 'PHPMVC');
+define('SITENAME', 'SharePosts');
