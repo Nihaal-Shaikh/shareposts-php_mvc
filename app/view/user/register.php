@@ -1,0 +1,9 @@
+<?php require APPROOT . '/view/inc/header.php'; ?>
+<div class="row">
+    <div class="col-6-md-6 mx-auto">
+        <div class="card card-body bg-light mt-5">
+            <h2>Create an account</h2>
+        </div>
+    </div>
+</div>
+<?php require APPROOT . '/view/inc/footer.php'; ?>
