@@ -126,10 +126,26 @@ class Users extends Controller
                 $data['password_error'] = 'Please enter password.';
             }
 
+            if ($this->userModel->findUserByEmail($data['email'])) {
+                // User found.
+            } else {
+                // User not found.
+                $data['email_error'] = 'No user found.';
+            }
+
             // Make sure errors are empty
             if (empty($data['email_error']) && empty($data['password_error'])) {
                 // Validated.
-                die('Success');
+                // Check and set logged in user.
+                $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+
+                if ($loggedInUser) {
+                    // Create Session
+                    die('Success');
+                }
+                $data['password_error']  = 'Password incorrect.';
+                // Load view with errors.
+                $this->view('user/login', $data);
             } else {
                 // Load view with errors.
                 $this->view('user/login', $data);
