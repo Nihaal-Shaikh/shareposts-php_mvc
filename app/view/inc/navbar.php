@@ -11,15 +11,15 @@
                     <a class="nav-link" aria-current="page" href="<?php echo URLROOT; ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT; ?>/page/about">About</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?php echo URLROOT; ?>/user/register">Register</a>
+                    <a class="nav-link" aria-current="page" href="<?php echo URLROOT; ?>/users/register">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT; ?>/user/login">Login</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Login</a>
                 </li>
             </ul>
         </div>

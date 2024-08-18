@@ -1,11 +1,12 @@
 <?php
 
-class User extends Controller
+class Users extends Controller
 {
+    private $userModel;
 
     public function __construct()
     {
-
+        $this->userModel = $this->model('User');
     }
 
     public function register()
@@ -31,6 +32,11 @@ class User extends Controller
             // Validate email.
             if (empty($data['email'])) {
                 $data['email_error'] = 'Please enter email.';
+            } else {
+                // Check email.
+                if ($this->userModel->findUserByEmail($data['email'])) {
+                    $data['email_error'] = 'Email is already taken.';
+                }
             }
 
             // Validate name.
@@ -56,8 +62,8 @@ class User extends Controller
 
             // Make sure errors are empty
             if (empty($data['email_error']) && empty($data['name_error']) && empty($data['password_error']) && empty($data['confirm_password_error'])) {
-                // Validated.
-                die('Success');
+                // Check if email already exists.
+
             } else {
                 // Load view with errors.
                 $this->view('user/register', $data);
